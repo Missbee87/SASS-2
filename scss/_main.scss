@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #181818;
+  color: $mainColor;
+  font-weight: map-get($miMap, regular);
+  line-height: 1.6;
+  font-family: 'Roboto', sans-serif;
+  padding: 0 1rem;
+}
+.navbar {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px 0 black;
+  min-height: 100px;
+}
+.navbar a:hover {
+  color: black;
+}
+#banner {
+  min-width: 400px;
+  height: 50vh;
+  position: relative;
+  z-index: 2;
+}
+#banner::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(310deg, #7928ca, #ff0080);
+  opacity: .8;
+  z-index: -1;
+}
+.boxTres {
+  text-align: center;
+}
+.boxTres ul {
+  list-style: none;
+}
+.boxTres a {
+  @extend .boxTres;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: #d63031;
+  color: #fff;
+}
+.container-md {
+	background: #222222;
+	box-shadow: 0 0 20px 0 rgba(255, 255, 255, .3);
+}
+.uno:hover{
+
+	transform: scale(1.1);
+	transition: all 200ms ease-in-out;
+}
+.dos:hover{
+transform: scale(1.1);
+transition: all 200ms ease-in-out;
+}
+.tres:hover{
+	transform: scale(1.1);
+	transition: all 200ms ease-in-out;
+}
+@media all and (max-width: $point-md) {
+  #banner MyTexts {
+    font-size: 1rem;
+  }
+}
+@media all and (max-width: $point-md) {
+  #banner myTitles {
+    font-size: 1.5rem;
+  }
+}
+
+@each $k, $v in $miMap{
+  .font-weight-#{$k}{
+    font-weight: $v;
+  }
+}
+.container{
+	height: auto;
+	.row{
+		@media all and (min-width: $point-xl){
+			height: 100px;
+		}
+	}
+}
+@mixin sizes($widht,$height){
+  height: $height;
+  width: $widht;
+}
+.box{
+	@extend .container-md;
+  @include sizes(100%, 100%);
+}
+
+
+
+
